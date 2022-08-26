@@ -22,7 +22,7 @@ public class Cameracript : MonoBehaviour
     {
     }
 
-    void getMapCeter()
+    public void getMapCeter()
     {
         Vector3 center = map.transform.position;
         Debug.Log(center);

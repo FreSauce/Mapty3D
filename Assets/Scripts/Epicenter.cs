@@ -10,7 +10,7 @@ public class Epicenter : MonoBehaviour
     [SerializeField] Camera pickPointCamera;
     int scrollValue = 10;
 
-    private Vector3 dragOrigin;
+    int panVelocity = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -58,14 +58,6 @@ public class Epicenter : MonoBehaviour
 
     private void panCamera()
     {
-        if (Input.GetMouseButtonDown(2))
-            dragOrigin = pickPointCamera.ScreenToWorldPoint(Input.mousePosition);
-
-        if (Input.GetMouseButton(2))
-        {
-            //Debug.Log("fasdg");
-            Vector3 diff = dragOrigin - pickPointCamera.ScreenToWorldPoint(Input.mousePosition);
-            pickPointCamera.transform.position += diff;
-        }
+        //if(Input.GetKey(''))
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Mapzen;
 
 public class ButtonHandler : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class ButtonHandler : MonoBehaviour
     public TMP_InputField inputField;
     public GeoCoder geoCoder;
     public GameObject mainCanvas;
+    public RegionMap map;
     public void HideHandler()
     {
         mainCanvas.GetComponent<MenuScript>().HideMainMenu();
@@ -15,5 +17,6 @@ public class ButtonHandler : MonoBehaviour
     public void SearchHandler()
     {
         geoCoder.Search(inputField.text);
+        map.regionMap.GetComponent<Cameracript>().getMapCeter();
     }
 }
