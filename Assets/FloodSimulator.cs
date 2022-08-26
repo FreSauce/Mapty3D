@@ -10,9 +10,9 @@ public class FloodSimulator : MonoBehaviour
     public GameObject prefab;
     public LineRenderer lineRenderer;
     private List<KeyValuePair<GameObject, float>> heightMap = new List<KeyValuePair<GameObject, float>>();
-    private float RoadSurfaceArea = 0f;
-    private float WaterSurfaceArea = 0f;
-    private float LanduseSurfaceArea = 0f;
+    public static float RoadSurfaceArea = 0f;
+    public static float WaterSurfaceArea = 0f;
+    public static float LanduseSurfaceArea = 0f;
 
     Gradient gradient;
     Gradient rendGrad;
