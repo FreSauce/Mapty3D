@@ -13,6 +13,7 @@ namespace Mapzen
         // This allows us to check whether an asset was serialized with a different version than this code.
         // If a serialized field of this class is changed or renamed, currentAssetVersion should be incremented.
         private FloodSimulator flood;
+        private EarthquakeSimulator earthquake;
         private const int currentAssetVersion = 1;
         [SerializeField] private int serializedAssetVersion = currentAssetVersion;
 
@@ -56,6 +57,7 @@ namespace Mapzen
         public void Start()
         {
             flood = gameObject.GetComponent<FloodSimulator>();
+            earthquake = gameObject.GetComponent<EarthquakeSimulator>();
         }
 
 
@@ -310,11 +312,13 @@ namespace Mapzen
             sceneGraph.Generate();
 
             Transform[] temp = regionMap.GetComponentsInChildren<Transform>();
+            Debug.Log("Position");
             foreach (Transform item in temp)
             {
                 item.gameObject.AddComponent<MeshCollider>();
             }
             flood.CalculateHeights();
+            earthquake.CalculateVector3();
         }
 
         public bool IsValid()
