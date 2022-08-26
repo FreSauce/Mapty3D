@@ -18,7 +18,7 @@ public class MenuScript : MonoBehaviour
             {
                 HideMainMenu();
             }
-            else
+            else if (!isMainMenuOpen && !isFloodMenuOpen && !isEarthquakeMenuOpen)
             {
                 ShowMainMenu();
             }
@@ -30,7 +30,7 @@ public class MenuScript : MonoBehaviour
             {
                 HideFloodMenu();
             }
-            else
+            else if (!isMainMenuOpen && !isFloodMenuOpen && !isEarthquakeMenuOpen)
             {
                 ShowFloodMenu();
             }
@@ -42,7 +42,7 @@ public class MenuScript : MonoBehaviour
             {
                 HideEarthquakeMenu();
             }
-            else
+            else if (!isMainMenuOpen && !isFloodMenuOpen && !isEarthquakeMenuOpen)
             {
                 ShowEarthquakeMenu();
             }
