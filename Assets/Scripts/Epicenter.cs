@@ -8,6 +8,7 @@ public class Epicenter : MonoBehaviour
     [SerializeField] Camera droneCamera;
     [SerializeField] GameObject pinObject;
     [SerializeField] Camera pickPointCamera;
+    [SerializeField] EarthquakeHandler earthquakeHandler;
     int scrollValue = 10;
 
     int panVelocity = 10;
@@ -36,6 +37,7 @@ public class Epicenter : MonoBehaviour
             {
                 //pickPointCamera.enabled = !pickPointCamera.enabled;
                 Debug.Log(hit.point);
+                earthquakeHandler.SetCoord(hit.point.x, hit.point.z);
                 pinObject.transform.position = hit.point;
                 //droneCamera.transform.position = hit.transform.gameObject.transform.position;
             }
