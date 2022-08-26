@@ -19,6 +19,7 @@ public class FloodSimulator : MonoBehaviour
     GradientColorKey[] colorKey;
     GradientColorKey[] rendKey;
     GradientAlphaKey[] alphaKey;
+    GradientAlphaKey[] alphaKey1;
 
 
 
@@ -45,11 +46,17 @@ public class FloodSimulator : MonoBehaviour
         alphaKey = new GradientAlphaKey[2];
         alphaKey[0].alpha = 1.0f;
         alphaKey[0].time = 0.0f;
-        alphaKey[1].alpha = 1.0f;
+        alphaKey[1].alpha = 0.0f;
         alphaKey[1].time = 1.0f;
 
+        alphaKey1 = new GradientAlphaKey[2];
+        alphaKey1[0].alpha = 1.0f;
+        alphaKey1[0].time = 0.0f;
+        alphaKey1[1].alpha = 0.0f;
+        alphaKey1[1].time = 1.0f;
+
         gradient.SetKeys(colorKey, alphaKey);
-        rendGrad.SetKeys(rendKey, alphaKey);
+        rendGrad.SetKeys(rendKey, alphaKey1);
 
         // What's the color at the relative time 0.25 (25 %) ?
     }
@@ -133,16 +140,16 @@ public class FloodSimulator : MonoBehaviour
         {
             return (int)(a.Value - b.Value);
         });
-        lineRenderer.positionCount = 30;
+        lineRenderer.positionCount = 32;
         foreach (var item in heightMap)
         {
-            if (i > 30) break;
+            if (i >= 32) break;
             if (item.Key == null || item.Key.name == "buildings") continue;
             MeshCollider temp = item.Key.gameObject.GetComponent<MeshCollider>();
             Vector3 pos = temp.bounds.center;
             pos.y = 400f;
             GameObject pre = Instantiate(prefab, pos, Quaternion.identity);
-            pre.GetComponent<MeshRenderer>().material.color = rendGrad.Evaluate(i / 30);
+            pre.GetComponent<MeshRenderer>().material.color = rendGrad.Evaluate(i / 31);
             lineRenderer.SetPosition((int)i, pos);
             i++;
         }

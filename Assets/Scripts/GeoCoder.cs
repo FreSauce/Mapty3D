@@ -14,17 +14,16 @@ public class GeoCoder : MonoBehaviour
     public List<IGeoCoderSearchItem> searchItems;
     public GameObject searchMenuItem;
 
-    public static string[] currLatLng=null;
-    
-    public static int zoomLevel=16;
-    public static int maxZoomLevel=16;
-    public static int minZoomLevel=0;
+    public static string[] currLatLng = null;
 
-    
+    public static int zoomLevel = 16;
+    public static int maxZoomLevel = 16;
+    public static int minZoomLevel = 0;
 
-    private void Awake()
-    {
-    }
+
+
+
+
 
     private void Start()
     {
@@ -81,6 +80,7 @@ public class GeoCoder : MonoBehaviour
     {
         Debug.Log(zoomLevel);
         currLatLng = latlng;
+        Debug.Log(currLatLng[0] + " " + currLatLng[1]);
         regionMap.DownloadTilesAsync(LatLngConvertor.GetBoundingBox(new List<string>(latlng), 1f, zoomLevel));
     }
 

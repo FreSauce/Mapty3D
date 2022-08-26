@@ -56,6 +56,7 @@ namespace Mapzen
 
         public void Start()
         {
+
             flood = gameObject.GetComponent<FloodSimulator>();
             earthquake = gameObject.GetComponent<EarthquakeSimulator>();
         }
