@@ -8,42 +8,100 @@ public class MenuScript : MonoBehaviour
     public GameObject zoomMenu;
     public GameObject floodMenu;
     public GameObject earthquakeMenu;
-    private bool isMenuOpen = false;
+    private bool isMainMenuOpen = false;
+    private bool isFloodMenuOpen = false;
+    private bool isEarthquakeMenuOpen = false;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
-            if (isMenuOpen)
+            if (isMainMenuOpen)
             {
-                Hide();
+                HideMainMenu();
             }
             else
             {
-                Show();
+                ShowMainMenu();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (isFloodMenuOpen)
+            {
+                HideFloodMenu();
+            }
+            else
+            {
+                ShowFloodMenu();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isEarthquakeMenuOpen)
+            {
+                HideEarthquakeMenu();
+            }
+            else
+            {
+                ShowEarthquakeMenu();
             }
         }
     }
 
-    public void Show()
+    public void ShowMainMenu()
     {
-        if (!isMenuOpen)
+        if (!isMainMenuOpen)
         {
             searchMenu.SetActive(true);
             zoomMenu.SetActive(true);
-            floodMenu.SetActive(true);
-            earthquakeMenu.SetActive(true);
-            isMenuOpen = true;
+            isMainMenuOpen = true;
         }
     }
 
-    public void Hide()
+    public void HideMainMenu()
     {
-        if (isMenuOpen)
+        if (isMainMenuOpen)
         {
             searchMenu.SetActive(false);
             zoomMenu.SetActive(false);
+            isMainMenuOpen = false;
+        }
+    }
+
+    public void ShowFloodMenu()
+    {
+        if (!isFloodMenuOpen)
+        {
+            floodMenu.SetActive(true);
+            isFloodMenuOpen = true;
+        }
+    }
+
+    public void HideFloodMenu()
+    {
+        if (isFloodMenuOpen)
+        {
             floodMenu.SetActive(false);
+            isFloodMenuOpen = false;
+        }
+    }
+
+    public void ShowEarthquakeMenu()
+    {
+        if (!isEarthquakeMenuOpen)
+        {
+            earthquakeMenu.SetActive(true);
+            isEarthquakeMenuOpen = true;
+        }
+    }
+
+    public void HideEarthquakeMenu()
+    {
+        if (isEarthquakeMenuOpen)
+        {
             earthquakeMenu.SetActive(false);
-            isMenuOpen = false;
+            isEarthquakeMenuOpen = false;
         }
     }
 }

@@ -9,7 +9,7 @@ public class ButtonHandler : MonoBehaviour
     public GameObject mainCanvas;
     public void HideHandler()
     {
-        mainCanvas.GetComponent<MenuScript>().Hide();
+        mainCanvas.GetComponent<MenuScript>().HideMainMenu();
     }
 
     public void SearchHandler()
