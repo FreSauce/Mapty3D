@@ -11,6 +11,12 @@ public class EarthquakeHandler : MonoBehaviour
     public TMP_InputField radInput;
     public GameObject regionMap;
 
+    public void SetCoord(float x, float z)
+    {
+        X_Coordn.text = x.ToString();
+        Z_Coordn.text = z.ToString();
+    }
+
     public void applyEarthquake()
     {
         float x = float.Parse(X_Coordn.text);
@@ -18,6 +24,14 @@ public class EarthquakeHandler : MonoBehaviour
         float mag = float.Parse(magInput.text);
         float rad = float.Parse(radInput.text);
         Debug.Log(x + " " + z);
-        regionMap.GetComponent<EarthquakeSimulator>().EathquakeColoring(new Vector3(x, 0, z),rad,mag);
+        regionMap.GetComponent<EarthquakeSimulator>().EathquakeColoring(new Vector3(x, 0, z), rad, mag);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKey("r"))
+        {
+            applyEarthquake();
+        }
     }
 }
