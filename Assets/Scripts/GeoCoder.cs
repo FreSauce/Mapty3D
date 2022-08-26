@@ -81,7 +81,7 @@ public class GeoCoder : MonoBehaviour
     {
         Debug.Log(zoomLevel);
         currLatLng = latlng;
-        regionMap.DownloadTilesAsync(LatLngConvertor.GetBoundingBox(new List<string>(latlng), 0.5f, zoomLevel));
+        regionMap.DownloadTilesAsync(LatLngConvertor.GetBoundingBox(new List<string>(latlng), 1f, zoomLevel));
     }
 
     public void ZoomIn()
