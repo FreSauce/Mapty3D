@@ -11,7 +11,7 @@ namespace Drone.Scripts.GamePlay
         #region Variables
 
         [Header("Engine Properties")] 
-        [SerializeField] private float maxPower = 4;
+        [SerializeField] private float maxPower = 1000;
 
         [Header("Propeller Properties")] 
         [SerializeField] private Transform propeller;
