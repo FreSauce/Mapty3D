@@ -6,26 +6,18 @@ using Mapzen;
 public class Cameracript : MonoBehaviour
 {
 
-    [SerializeField] Camera pickPoinCamera;
+    [SerializeField] public Camera pickPoinCamera;
     public RegionMap map;
 
-    // Start is called before the first frame update
     void Start()
     {
         map = gameObject.GetComponent<RegionMap>();
-        getMapCeter();
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    
     public void getMapCeter()
     {
-        Vector3 center = map.transform.position;
+        Vector3 center = map.regionMap.GetComponent<MeshCollider>().bounds.max;
         Debug.Log(center);
-        pickPoinCamera.transform.position = center;
+        GameObject.FindGameObjectWithTag("TopCamera").transform.position = new Vector3(center.x,center.y,center.z);
     }
 }

@@ -21,7 +21,7 @@ public class Epicenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             droneCamera.enabled = !droneCamera.enabled;
             pickPointCamera.enabled = !pickPointCamera.enabled;
@@ -53,11 +53,39 @@ public class Epicenter : MonoBehaviour
             //pickPointCamera.orthographicSize--;
         }
 
-        panCamera();
+        if (pickPointCamera.enabled)
+            panCamera();
     }
 
     private void panCamera()
     {
-        //if(Input.GetKey(''))
+        if (Input.GetKey("j"))
+        {
+            pickPointCamera.transform.position = new Vector3(
+                gameObject.transform.position.x - panVelocity,
+                gameObject.transform.position.y,
+                gameObject.transform.position.z);
+        }
+        if (Input.GetKey("l"))
+        {
+            pickPointCamera.transform.position = new Vector3(
+                gameObject.transform.position.x + panVelocity,
+                gameObject.transform.position.y,
+                gameObject.transform.position.z);
+        }
+        if (Input.GetKey("i"))
+        {
+            pickPointCamera.transform.position = new Vector3(
+                gameObject.transform.position.x,
+                gameObject.transform.position.y,
+                gameObject.transform.position.z + panVelocity);
+        }
+        if (Input.GetKey("k"))
+        {
+            pickPointCamera.transform.position = new Vector3(
+                gameObject.transform.position.x,
+                gameObject.transform.position.y,
+                gameObject.transform.position.z - panVelocity);
+        }
     }
 }
