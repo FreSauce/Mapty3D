@@ -13,3 +13,17 @@
 
 ## Screenshots
 
+### Drone view of the map
+<img width="60%" src="https://github.com/FreSauce/Mapty3D/blob/main/Screenshots/Screenshot%202022-10-05%20151914.png" />
+
+### Flood prediction
+<img width="60%" src="https://github.com/FreSauce/Mapty3D/blob/main/Screenshots/Screenshot%202022-10-05%20152017.png" />
+
+### Top view of flood prediction
+<img width="60%" src="https://github.com/FreSauce/Mapty3D/blob/main/Screenshots/Screenshot%202022-10-05%20152113.png" />
+
+### Predict shortest path to critical areas
+<img width="60%" src="https://github.com/FreSauce/Mapty3D/blob/main/Screenshots/Screenshot%202022-10-05%20152158.png" />
+
+### Earthquake prediction
+<img width="60%" src="https://github.com/FreSauce/Mapty3D/blob/main/Screenshots/Screenshot%202022-10-05%20152316.png" />
