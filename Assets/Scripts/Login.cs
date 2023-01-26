@@ -13,8 +13,8 @@ public class Login : MonoBehaviour
     public GameObject loginCanvas;
     public GameObject SignupCanvas;
     public GameObject MainMenuCanvas;
-    [SerializeField] private string loginEndpoint = "https://mapty3d.herokuapp.com/api/users/login";
-    [SerializeField] private string signupEndpoint = "https://mapty3d.herokuapp.com/api/users/signup";
+    [SerializeField] private string loginEndpoint = "https://sih-mapty3d-server.onrender.com/api/users/login";
+    [SerializeField] private string signupEndpoint = "https://sih-mapty3d-server.onrender.com/api/users/signup";
 
     [SerializeField] private Button loginButton;
     [SerializeField] private Button quitButton;
@@ -109,6 +109,7 @@ public class Login : MonoBehaviour
             {
                 await Task.Yield();
             }
+            Debug.Log(request.result);
             if (request.result == UnityWebRequest.Result.Success)
             {
                 LoginResponse response = JsonUtility.FromJson<LoginResponse>(request.downloadHandler.text);

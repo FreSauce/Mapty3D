@@ -4249,8 +4249,8 @@ MonoBehaviour:
   loginCanvas: {fileID: 274031009}
   SignupCanvas: {fileID: 1644889574}
   MainMenuCanvas: {fileID: 1409705229}
-  loginEndpoint: https://mapty3d.herokuapp.com/api/users/login
-  signupEndpoint: https://mapty3d.herokuapp.com/api/users/signup
+  loginEndpoint: https://sih-mapty3d-server.onrender.com/api/users/login
+  signupEndpoint: https://sih-mapty3d-server.onrender.com/api/users/signup
   loginButton: {fileID: 1905011510}
   quitButton: {fileID: 1745872692}
   createButton: {fileID: 1014457951}
